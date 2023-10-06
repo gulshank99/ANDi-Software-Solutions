@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDi Software Solutions</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta3/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta3/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Add this CSS code to your stylesheet or in a <style> tag in your HTML */
+        .navbar-nav .nav-link {
+            transition: background-color 0.5s;
+            /* Add a smooth transition effect */
+            padding: 0%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: rgb(64, 64, 64);
+            /* Change the background color on hover */
+            color: white;
+            /* Change the text color on hover */
+        }
+
+        .navbar-nav .nav-link:focus,
+        .navbar-nav .nav-link:active {
+            background-color: #e7171f;
+            /* Change the background color on focus and active states */
+            color: white;
+            /* Change the text color on focus and active states */
+        }
+ 
+
+        .contact-section-contact-box {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section-title-white h2 {
+            color: #fff;
+        }
+
+        .details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .details li {
+            margin-bottom: 10px;
+        }
+
+        .details i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .social {
+            margin-top: 20px;
+        }
+
+        .social a {
+            color: #fff;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+
+
+         /* Custom CSS for news ticker */
+         .ticker-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 40px; /* Adjust the height as needed */
+        }
+        .ticker-inner {
+            white-space: nowrap;
+            animation: ticker 10s linear infinite; /* Adjust the duration as needed */
+        }
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Custom CSS for the news item */
+        .ticker-inner a {
+            font-weight: bold; /* Make the text bold */
+            text-decoration: none !important; /* Remove text decoration */
+            color: #007bff; /* Set the color to black */
+        }
+
+
+        .mapouter {
+            position: relative;
+            text-align: right;
+            width: 100%;
+            height: 400px;
+        }
+
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            width: 100%;
+            height: 400px;
+        }
+
+        .gmap_iframe {
+            height: 400px !important;
+        }
+
+        /* Style the ::before and ::after pseudo-elements for the heading */
+        .defult-title h1::before,
+        .defult-title h1::after {
+            content: "––";
+            color: red;
+        }
+
+         
+
+        .about-three-col h3::after {
+            content: "";
+            display: block;
+            width: 5%; /* Adjust line width as needed */
+            height: 3px; /* Adjust line thickness as needed */
+            background-color: red;
+            margin-top: 5px; /* Adjust this value as needed */
+            margin-bottom: 15px; /* Adjust this value as needed */
+        }
+
+         
+    </style>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+
+
+
+
+<body>
+
+
+    <header class="bg-danger py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-12 mb-2 mb-md-0">
+                    <i class="fab fa-whatsapp text-white"></i>
+                    <span class="text-white ms-2  "><a href="tel:+91-7015574125"
+                            class="text-white  text-decoration-none">+91-7015574125, +91-8810385787</a></span>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="d-flex flex-wrap justify-content-center justify-content-md-end">
+                        <a href="https://andisoftwaresolutions.com/" class="btn btn-dark mx-1 my-1">Toll Free Panel</a>
+                        <a href="https://andisoftwaresolutions.com/" class="btn btn-dark mx-1 my-1">Missed Call
+                            Panel</a>
+                        <a href="https://andisoftwaresolutions.com/" class="btn btn-dark mx-1 my-1">SMS Panel</a>
+                        <a href="https://www.dbssms.in/" class="btn btn-dark mx-1 my-1">WhatsApp Panel</a>
+                        <a href="payment.php" class="btn btn-dark mx-1 my-1">Payment</a>
+                        <!-- Google Translate Element -->
+                        <div id="google_translate_element" class="mx-1 my-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <!-- ---------------------Nav BAr-------------------------------- -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid ">
+            <a class="navbar-brand"><img class="rounded-circle" style="width:100%; height:auto" src="assets/logo.jpg"
+                    alt="ANDi Software Solutions">
+            </a>
+
+            <a class="fs-4 fw-bold text-light" href="#" style="text-decoration: none;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav fs-3 w-100 d-flex justify-content-evenly">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#CloudSoftware">Cloud Software</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+
+
+
+
+
+    <!-- ------------------------------Scrolling Effect---------------------------------------------- -->
+
+    <div class="container">
+        <div class="ticker-container">
+            <div class="ticker-inner">
+                <a href="#">Freelancers/Franchise/Reseller Required in all major cities</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ------------------------ -----------------End of Scrolling effect--------------------------------- -->
+
+
+
+
+
+
+
+    <!-- Corousel Sliding Images -->
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="assets/slidingImg1.jpg" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/slidingImg2.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+
+    <!-- --------------------------------Basic intro to Web Site --------------------------------- -->
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 id="home">Welcome to ANDi Software </h1>
+                <p class="font-weight-normal"> ANDi Software Solutions is a dynamic and innovative technology company
+                    dedicated to delivering cutting-edge software solutions. With a team of skilled professionals, ANDi
+                    specializes in providing cloud-based software, web development, and mobile app solutions to
+                    businesses across various industries. Committed to excellence, ANDi focuses on delivering
+                    high-quality, user-friendly, and scalable software products that empower clients to streamline
+                    operations, enhance customer engagement, and achieve their digital transformation goals. Through a
+                    combination of creativity, technical expertise, and a customer-centric approach, ANDi Software
+                    Solutions stands as a reliable partner for businesses seeking to harness the power of technology for
+                    growth and success.</p>
+                <a href="#" class="btn btn-primary mb-2">Learn More</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="assets/basic.jpg" alt="College Hostel" class="img-fluid" style="border-radius: 10px;">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- -------------------------------------------About Us -----------------------Contact----------------------------- -->
+
+    <section class="about-area about-area-three">
+        <div class="container">
+            <div class="defult-title text-center">
+                <h1 id="about">About Us</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about-three-col">
+                        <h3>ANDi software solutions makes technology and information work for business :</h3>
+                        <p>Use our products to grow, protect, and simplify your business processes. Our tools enable our
+                            users to attract, keep & further increase their end customers.</p>
+                        <h3>We help you to grow :</h3>
+                        <p>We carefully study markets, trends, emerging practices for industry & region and add
+                            learnings to make our products to help you grow globally.</p>
+                        <h3>We are united by a strong set of values & focused on client impact.</h3>
+                        <p>The quality of our team is the pivot stone in our ability to serve our clients. For this
+                            reason, we invest tremendous resources in identifying exceptional people, develop their
+                            skill and create an environment to deliver the best-in-class products to customers.</p>
+                        <h3>We help make change happen.</h3>
+                        <p>Our experience, tools, and hands-on support help clients to achieve their goals by using our
+                            products & services.</p>
+                        <h3>Honesty</h3>
+                        <p>This guiding principle helped us in building long-term relationships with our customers and
+                            partners across the globe.</p>
+                        <h3>Technical Skills</h3>
+                        <p>Our team is proficient in the core technology we support. We actively participate in industry
+                            conferences to bring refined cutting-edge solutions to meet client needs.</p>
+                        <h3>Commitment</h3>
+                        <p>We understand that the success of the business fundamentally depends on the people in it. We
+                            put people first and do not rest until our clients are satisfied and delighted.</p>
+                        <h3>Originality</h3>
+                        <p>Our team believes in original content and designs. We thus do development and content writing
+                            ourselves rather than copying the content from existing websites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- -------------- ---------------Cloud Software -------------------- -- -->
+
+     
+       
+        
+        <section class="about-area about-area-three">
+            <div class="container">
+                <div class="defult-title text-center">
+                    <h1 id="CloudSoftware">Our Cloud Software</h1>
+                </div> 
+
+                 
+                <div class="row d-flex flex-wrap  ">
+
+
+                    <!-- Cloud Software Item 1 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Cloud Software Item 2 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/7.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi Barcode</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Easy cloud-based generation and printing of barcodes suitable for any kind of products.</p>
+                                <p class="card-text">List Price: INR 7,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="https://andisoftwaresolutions.com/3.jpg" class="card-img-top" alt="Cloud Software Image">
+                            <div class="card-body">
+                                <h3 class="card-title">ANDi AMC</h3>
+                                <p class="card-text">Sector - Business</p>
+                                <p class="card-text">Suitable for all kinds of service providers for managing/record keeping of their annual maintenance contracts online with detailed customer and service database.</p>
+                                <p class="card-text">List Price: INR 25,200 + GST</p>
+                            </div>
+                        </div>
+                    </div>
+
+    
+                    <!-- Add more Cloud Software items as needed -->
+                </div>
+            </div>
+        </section>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- -----------------------Contact----------------------------- -->
+
+  
+
+
+    <div class="container-fluid p-0" style="background-color: lavender;">
+        <div id="contact" style="text-align: center;">
+
+            <p class="text-dark fs-3 fw-bold mb-4"><span>Get In Touch</span></p>
+
+            <div class="d-flex flex-wrap">
+                <!-- Contact Box -->
+                <div class="contact-section col-12 col-md-5 m-0">
+                    <div class="contact-section-contact-box">
+                        <div class="section-title-white">
+                            <h2>CONTACT</h2>
+                        </div>
+                        <div class="details">
+                            <p>For any kind of query, contact us with the details below.</p>
+                            <ul>
+                                <li><i class="fa fa-phone-volume"></i>+91-7015574125, +91-8810385787, +91-7206533219,
+                                    +91-9817622697</li>
+                                <li><i class="fa fa-envelope"></i>andisoftwaresolutions@gmail.com</li>
+                                <li><i class="fa fa-map-marker"></i> <b>ANDi Software Solutions</b><br>Panipat &amp;
+                                    Noida</li>
+                            </ul>
+                        </div>
+                        <div class="social">
+                            <h2>Follow us :</h2>
+                            <a href="https://www.facebook.com/Andi-Software-Solutions-100644611294859/"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/andisoftwaresolutions5/?hl=en"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UC0mfGwSDteVVWqmggE3MtYQ"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="https://in.pinterest.com/andisoftwaresolutions/"><i
+                                    class="fab fa-pinterest"></i></a>
+                            <a href="https://andisoftwaresolutions.tumblr.com/"><i class="fab fa-tumblr"></i></a>
+                            <a href="https://www.linkedin.com/company/andisoftwaresolutions"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://www.reddit.com/user/ANDIsoftsol"><i class="fab fa-reddit"></i></a>
+                            <a href="https://www.flickr.com/people/andi_software_solutions/"><i
+                                    class="fab fa-flickr"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="map-section col-12 col-md-7">
+                    <div class="mapouter">
+                        <div class="gmap_canvas ">
+                            <iframe class="gmap_iframe"  width="100%" frameborder="0" scrolling="no" marginheight="0"
+                                marginwidth="0" 
+                                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Railway Road Panipat, Haryana 132103&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Link Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <div class="container-fluid p-0" style="background-color:rgba(0, 0, 0, 0.9); color:#FFF">
+        <div style="text-align:center">
+            <center class="p-3">
+                <p class="m-0 fs-5 text-white"> <strong>Copyright 2021 &copy; ANDi Software Solutions</strong>. All
+                    Rights
+                    Reserved.<br />Designed &amp; Developed By:Gulshan Kumar
+                </p>
+            </center>
+        </div>
+    </div>
+
+
+
+
+ 
+
+</body>
+
+</html>
