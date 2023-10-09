@@ -109,8 +109,15 @@
 /* Style the ::before and ::after pseudo-elements for the heading */
 .defult-title h1::before,
 .defult-title h1::after {
-    content: "––";
+    content: "–";
     color: red;
+    font-size: 60px;
+    vertical-align: middle;
+    font-weight: 300;
+    display: inline-block;
+    vertical-align: middle; /* Center vertically with the text */
+    line-height: 1;
+
 }
 
  
@@ -125,18 +132,7 @@
     margin-bottom: 15px; /* Adjust this value as needed */
 }
 
-/* @media screen and (min-width: 768px) and (max-width:   1500px) {
-    .custom-card-height {
-        height: 1100px;  
-    }
-} */
-
-/* @media screen and (max-width:  1999px) {
-    .custom-card-height {
-        height: 900px;  
-    }
-} */
-
+ 
 
  
 
