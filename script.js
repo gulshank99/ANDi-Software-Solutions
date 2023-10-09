@@ -595,15 +595,45 @@
 
      
 
-    
-    // Add more items here
+     
 ];
 
-// Function to create a card element
+// // Function to create a card element
+// function createCard(item) {
+//     const card = document.createElement('div');
+//     card.className = 'col-lg-4 col-md-6 col-sm-12';
+//     // card.className = 'col-md-4';
+    
+
+//     card.innerHTML = `
+//         <div class="card mb-4 custom-card-height">
+//             <img src="${item.imageUrl}" class="card-img-top" alt="Cloud Software Image">
+//             <div class="card-body">
+//                 <h3 class="card-title">${item.title}</h3>
+//                 <p class="card-text">${item.sector}</p>
+//                 <p class="card-text">${item.description}</p>
+//                 <p class="card-text">${item.price}</p>
+//             </div>
+//         </div>
+//     `;
+
+//     return card;
+// }
+
+// // Add cards to the software-list
+// const softwareList = document.getElementById('software-list');
+// softwareItems.forEach(item => {
+//     const card = createCard(item);
+//     softwareList.appendChild(card);
+// });
+
+
 function createCard(item) {
     const card = document.createElement('div');
-    card.className = 'col-md-4';
-    
+    card.className = 'col-md-4 card-container'; // Add a common class
+
+    // Initially show a truncated description
+    const truncatedDescription = item.description.substring(0, 110); // Adjust the character limit as needed
 
     card.innerHTML = `
         <div class="card mb-4 custom-card-height">
@@ -611,11 +641,58 @@ function createCard(item) {
             <div class="card-body">
                 <h3 class="card-title">${item.title}</h3>
                 <p class="card-text">${item.sector}</p>
-                <p class="card-text">${item.description}</p>
+                <p class="card-text description">${truncatedDescription}...</p>
+                <a href="#" class="btn btn-primary read-more-link ">Read More</a>
+                <a href="#" class="btn btn-secondary read-less-link " style="display: none;">Read Less</a>
+                <p class="full-description" style="display: none;">${item.description}</p>
                 <p class="card-text">${item.price}</p>
             </div>
         </div>
     `;
+
+    // Use event delegation to handle clicks on "Read More" and "Read Less"
+    card.addEventListener('click', function (e) {
+        const target = e.target;
+        if (target.classList.contains('read-more-link')) {
+            e.preventDefault();
+            const description = card.querySelector('.description');
+            const fullDescription = card.querySelector('.full-description');
+            const readMoreLink = card.querySelector('.read-more-link');
+            const readLessLink = card.querySelector('.read-less-link');
+
+            description.style.display = 'none';
+            fullDescription.style.display = 'block';
+            readMoreLink.style.display = 'none';
+            readLessLink.style.display = 'inline';
+
+            // Collapse all other cards
+            const allCards = document.querySelectorAll('.card-container');
+            allCards.forEach((otherCard) => {
+                if (otherCard !== card) {
+                    const otherDescription = otherCard.querySelector('.description');
+                    const otherFullDescription = otherCard.querySelector('.full-description');
+                    const otherReadMoreLink = otherCard.querySelector('.read-more-link');
+                    const otherReadLessLink = otherCard.querySelector('.read-less-link');
+
+                    otherDescription.style.display = 'block';
+                    otherFullDescription.style.display = 'none';
+                    otherReadMoreLink.style.display = 'inline';
+                    otherReadLessLink.style.display = 'none';
+                }
+            });
+        } else if (target.classList.contains('read-less-link')) {
+            e.preventDefault();
+            const description = card.querySelector('.description');
+            const fullDescription = card.querySelector('.full-description');
+            const readMoreLink = card.querySelector('.read-more-link');
+            const readLessLink = card.querySelector('.read-less-link');
+
+            description.style.display = 'block';
+            fullDescription.style.display = 'none';
+            readMoreLink.style.display = 'inline';
+            readLessLink.style.display = 'none';
+        }
+    });
 
     return card;
 }
@@ -626,7 +703,6 @@ softwareItems.forEach(item => {
     const card = createCard(item);
     softwareList.appendChild(card);
 });
-
 
 
  
