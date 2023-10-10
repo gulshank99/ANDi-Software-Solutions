@@ -57,11 +57,11 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    height: 40px; /* Adjust the height as needed */
+    height: 40px;  
 }
 .ticker-inner {
     white-space: nowrap;
-    animation: ticker 8s linear infinite; /* Adjust the duration as needed */
+    animation: ticker 8s linear infinite;  
 }
 @keyframes ticker {
     0% {
@@ -111,6 +111,24 @@
     margin: 0 10px;  
 }
 
+@media screen and (max-width: 768px) { 
+    .defult-title h1 .hide-on-small-screen {
+        display: none; 
+    }
+
+    .defult-title h1::before,
+    .defult-title h1::after {
+    content: "";
+    display: inline-block;
+    width: 30px;  
+    height: 3px; 
+    background-color: red;
+    vertical-align: middle;  
+    margin: 0 10px;  
+}
+
+
+}
  
 
 .about-three-col h3::after {

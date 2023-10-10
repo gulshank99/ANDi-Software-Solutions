@@ -645,7 +645,7 @@ const softwareItems = [
 
 function createCard(item) {
   const card = document.createElement("div");
-  card.className = "col-md-4 card-container"; // Add a common class
+  card.className = "col-md-4 card-container"; // Added a common class
 
   // Initially show a truncated description
   const truncatedDescription = item.description.substring(0, 110); // Adjust the character limit as needed
